@@ -73,7 +73,7 @@ The application uses a microservices architecture with Docker containers:
 1. Clone the repository:
    ```bash
    git clone https://github.com/atsjbadhe/aiq-power-plant.git
-   cd power-viz
+   cd aiq-padministrationower-plant
    ```
 
 2. Build and run the containers:
