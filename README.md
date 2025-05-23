@@ -1,4 +1,4 @@
-# Power Plant Visualization
+Save priti# Power Plant Visualization
 
 A full-stack application for visualizing the annual net generation of U.S. power plants based on EPA's eGRID 2023 dataset.
 
@@ -72,7 +72,7 @@ The application uses a microservices architecture with Docker containers:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/power-viz.git
+   git clone https://github.com/atsjbadhe/aiq-power-plant.git
    cd power-viz
    ```
 
