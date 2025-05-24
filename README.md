@@ -98,7 +98,9 @@ Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Archit
 
 ### Conceptual Architecture
 
-![Conceptual View](./docs/img/aiq-Conceptual.jpg)
+![Conceptual View](./docs/img/aiq-Conceptual.jpg) 
+
+![More Details](./docs/AIQ-Architecture.md)
 
 **Data Sources:** The process begins with raw data, exemplified by a "Source file" which is specifically identified as a CSV (Comma Separated Values) file. This indicates that the system primarily ingests structured, delimited data.
 
