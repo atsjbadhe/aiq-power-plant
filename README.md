@@ -114,7 +114,7 @@ In essence, the system conceptually takes raw data, processes it through a defin
 
 ### Logical Architecture
 
-![Logical Architecture](./docs/img/aiq-HighLevelView.jpg)
+![Logical Architecture](./docs/img/aiq-HIghLevelView.jpg)
 
 
 ### Deployment Architecture
