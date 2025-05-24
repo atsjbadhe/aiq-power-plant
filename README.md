@@ -29,6 +29,8 @@ A full-stack application for visualizing the annual net generation of U.S. power
 
 The application uses a microservices architecture with Docker containers:
 
+Find Software Architecture Document at (https://github.com/atsjbadhe/aiq-power-plant/wiki/PowerPlant-Visualization-%E2%80%90-Software-Architecture-Document)
+
 ### Logical Architecture
 
 ```
