@@ -114,7 +114,8 @@ In essence, the system conceptually takes raw data, processes it through a defin
 
 ### Logical Architecture
 
-![Conceptual View](./docs/img/High Level View.jpg)
+![Logical Architecture](./docs/img/High Level View.jpg)
+
 
 ### Deployment Architecture
 
