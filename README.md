@@ -119,11 +119,11 @@ In essence, the system conceptually takes raw data, processes it through a defin
 
 ### Deployment Architecture
 
-![Conceptual View](./docs/img/DeploymentView.jpg)
+![DeploymentView](./docs/img/DeploymentView.jpg)
 
 ### Infrastructure Architecture
 
-![Conceptual View](./docs/img/InfraView.jpg)
+![InfraView](./docs/img/InfraView.jpg)
 
 
 ## Handling Changing Requirements
