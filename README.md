@@ -3,81 +3,16 @@ Power Plant Visualization
 A full-stack application for visualizing the annual net generation of U.S. power plants based on EPA's eGRID 2023 dataset.
 
 ## Table of Contents
-
-- [Features](#features)
-- [Architecture](#architecture)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup and Installation](#setup-and-installation)
   - [Authentication Setup](#authentication-setup)
 - [Usage](#usage)
+- [Features](#features)
+- [Architecture](#architecture)
 - [Handling Changing Requirements](#handling-changing-requirements)
 - [Monitoring](#monitoring)
 - [Technology Choices](#technology-choices)
-
-## Features
-
-- **Data Ingestion**: Upload CSV files from EPA's eGRID dataset to S3-compatible storage
-- **Data Visualization**: Interactive charts showing top power plants by net generation
-- **Filtering**: Filter power plants by U.S. state
-- **User Interface**: Simple User Interface
-- **Authentication**: Secure user authentication via Clerk (social media authentication)
-- **Comprehensive Logging**: Application logs, error logs, and audit logs for security and compliance
-
-## Architecture
-
-The application uses a simple three tier application. 
-
-Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document)
-
-### Conceptual Architecture
-
-![Conceptual View](./docs/img/aiq-Conceptual.jpg)
-
-**Data Sources:** The process begins with raw data, exemplified by a "Source file" which is specifically identified as a CSV (Comma Separated Values) file. This indicates that the system primarily ingests structured, delimited data.
-
-**Orchestration:** This central component represents the core data pipeline, handling the transformation and management of data. It consists of three sequential stages:
-
-**Data Ingestion:** This stage is responsible for reading and taking in raw data from the specified data sources (e.g., the CSV file).
-**Data Processing:** After ingestion, the raw data undergoes various transformations, cleaning, aggregation, or enrichment processes to make it suitable for analysis and storage.
-**Data Storage:** The processed data is then persisted in a storage mechanism, making it available for retrieval and further use.
-**Visualisation:** This component is responsible for presenting the processed data in a human-understandable format, likely through charts, graphs, dashboards, or reports, as suggested by the visualization icon. It retrieves data from "Data Storage" to create these visualizations.
-
-Business User: The ultimate consumer of the system's output is the "Business User." They interact with the "Visualisation" component by sending "Query" requests to obtain insights from the processed data. The visualization component, in turn, performs "Retrieval" from the "Data Storage" to fulfill these queries.
-
-In essence, the system conceptually takes raw data, processes it through a defined pipeline, stores it, and then allows business users to query and visualize this processed data to gain insights. It highlights the logical separation of concerns within the data flow
-
-### Logical Architecture
-
-```
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│             │      │             │      │             │
-│   Frontend  │◄────►│   Backend   │◄────►│  Object     │
-│   (React)   │      │   (FastAPI) │      │  Storage    │
-│             │      │             │      │  (MinIO/S3) │
-└─────────────┘      └─────────────┘      └─────────────┘
-```
-
-### Deployment Architecture
-
-```
-┌─────────────────────────────────────────────────────┐
-│                  Docker Compose                     │
-│                                                     │
-│  ┌───────────┐   ┌───────────┐   ┌───────────┐     │
-│  │  Frontend │   │  Backend  │   │   MinIO   │     │
-│  │  Container│   │  Container│   │  Container│     │
-│  └───────────┘   └───────────┘   └───────────┘     │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-
-### Infrastructure Architecture
-
-- **Frontend**: React with TypeScript, Vite, Material UI, and Recharts
-- **Backend**: Python FastAPI with pandas for data processing
-- **Storage**: MinIO (S3-compatible object storage)
-- **Containerization**: Docker with docker-compose for orchestration
 
 ## Getting Started
 
@@ -145,6 +80,72 @@ The application uses [Clerk](https://clerk.dev/) for authentication. Follow thes
    - Select a state from the dropdown
    - Specify the number of top plants to view
    - Click "Visualize" to see the chart and data table
+
+## Features
+
+- **Data Ingestion**: Upload CSV files from EPA's eGRID dataset to S3-compatible storage
+- **Data Visualization**: Interactive charts showing top power plants by net generation
+- **Filtering**: Filter power plants by U.S. state
+- **User Interface**: Simple User Interface
+- **Authentication**: Secure user authentication via Clerk (social media authentication)
+- **Comprehensive Logging**: Application logs, error logs, and audit logs for security and compliance
+
+## Architecture
+
+The application uses a simple three tier application. 
+
+Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document)
+
+### Conceptual Architecture
+
+![Conceptual View](./docs/img/aiq-Conceptual.jpg)
+
+**Data Sources:** The process begins with raw data, exemplified by a "Source file" which is specifically identified as a CSV (Comma Separated Values) file. This indicates that the system primarily ingests structured, delimited data.
+
+**Orchestration:** This central component represents the core data pipeline, handling the transformation and management of data. It consists of three sequential stages:
+
+**Data Ingestion:** This stage is responsible for reading and taking in raw data from the specified data sources (e.g., the CSV file).
+**Data Processing:** After ingestion, the raw data undergoes various transformations, cleaning, aggregation, or enrichment processes to make it suitable for analysis and storage.
+**Data Storage:** The processed data is then persisted in a storage mechanism, making it available for retrieval and further use.
+**Visualisation:** This component is responsible for presenting the processed data in a human-understandable format, likely through charts, graphs, dashboards, or reports, as suggested by the visualization icon. It retrieves data from "Data Storage" to create these visualizations.
+
+Business User: The ultimate consumer of the system's output is the "Business User." They interact with the "Visualisation" component by sending "Query" requests to obtain insights from the processed data. The visualization component, in turn, performs "Retrieval" from the "Data Storage" to fulfill these queries.
+
+In essence, the system conceptually takes raw data, processes it through a defined pipeline, stores it, and then allows business users to query and visualize this processed data to gain insights. It highlights the logical separation of concerns within the data flow
+
+### Logical Architecture
+
+```
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│             │      │             │      │             │
+│   Frontend  │◄────►│   Backend   │◄────►│  Object     │
+│   (React)   │      │   (FastAPI) │      │  Storage    │
+│             │      │             │      │  (MinIO/S3) │
+└─────────────┘      └─────────────┘      └─────────────┘
+```
+
+### Deployment Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│                  Docker Compose                     │
+│                                                     │
+│  ┌───────────┐   ┌───────────┐   ┌───────────┐     │
+│  │  Frontend │   │  Backend  │   │   MinIO   │     │
+│  │  Container│   │  Container│   │  Container│     │
+│  └───────────┘   └───────────┘   └───────────┘     │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+### Infrastructure Architecture
+
+- **Frontend**: React with TypeScript, Vite, Material UI, and Recharts
+- **Backend**: Python FastAPI with pandas for data processing
+- **Storage**: MinIO (S3-compatible object storage)
+- **Containerization**: Docker with docker-compose for orchestration
+
+
 
 ## Handling Changing Requirements
 
