@@ -1,4 +1,4 @@
-Save priti# Power Plant Visualization
+Power Plant Visualization
 
 A full-stack application for visualizing the annual net generation of U.S. power plants based on EPA's eGRID 2023 dataset.
 
