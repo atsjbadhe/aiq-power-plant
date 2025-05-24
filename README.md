@@ -108,43 +108,21 @@ Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Archit
 **Data Processing:** After ingestion, the raw data undergoes various transformations, cleaning, aggregation, or enrichment processes to make it suitable for analysis and storage.
 **Data Storage:** The processed data is then persisted in a storage mechanism, making it available for retrieval and further use.
 **Visualisation:** This component is responsible for presenting the processed data in a human-understandable format, likely through charts, graphs, dashboards, or reports, as suggested by the visualization icon. It retrieves data from "Data Storage" to create these visualizations.
-
-Business User: The ultimate consumer of the system's output is the "Business User." They interact with the "Visualisation" component by sending "Query" requests to obtain insights from the processed data. The visualization component, in turn, performs "Retrieval" from the "Data Storage" to fulfill these queries.
+**Business User:** The ultimate consumer of the system's output is the "Business User." They interact with the "Visualisation" component by sending "Query" requests to obtain insights from the processed data. The visualization component, in turn, performs "Retrieval" from the "Data Storage" to fulfill these queries.
 
 In essence, the system conceptually takes raw data, processes it through a defined pipeline, stores it, and then allows business users to query and visualize this processed data to gain insights. It highlights the logical separation of concerns within the data flow
 
 ### Logical Architecture
 
-```
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│             │      │             │      │             │
-│   Frontend  │◄────►│   Backend   │◄────►│  Object     │
-│   (React)   │      │   (FastAPI) │      │  Storage    │
-│             │      │             │      │  (MinIO/S3) │
-└─────────────┘      └─────────────┘      └─────────────┘
-```
+![Conceptual View](./docs/img/High Level View.jpg)
 
 ### Deployment Architecture
 
-```
-┌─────────────────────────────────────────────────────┐
-│                  Docker Compose                     │
-│                                                     │
-│  ┌───────────┐   ┌───────────┐   ┌───────────┐     │
-│  │  Frontend │   │  Backend  │   │   MinIO   │     │
-│  │  Container│   │  Container│   │  Container│     │
-│  └───────────┘   └───────────┘   └───────────┘     │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+![Conceptual View](./docs/img/Deployment View.jpg)
 
 ### Infrastructure Architecture
 
-- **Frontend**: React with TypeScript, Vite, Material UI, and Recharts
-- **Backend**: Python FastAPI with pandas for data processing
-- **Storage**: MinIO (S3-compatible object storage)
-- **Containerization**: Docker with docker-compose for orchestration
-
+![Conceptual View](./docs/img/Infra View.jpg)
 
 
 ## Handling Changing Requirements
