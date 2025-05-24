@@ -20,16 +20,21 @@ A full-stack application for visualizing the annual net generation of U.S. power
 - **Data Ingestion**: Upload CSV files from EPA's eGRID dataset to S3-compatible storage
 - **Data Visualization**: Interactive charts showing top power plants by net generation
 - **Filtering**: Filter power plants by U.S. state
-- **Configuration**: Specify the number of top plants to view
-- **Responsive UI**: Works on desktop and mobile devices
-- **Authentication**: Secure user authentication via Clerk
+- **User Interface**: Simple User Interface
+- **Authentication**: Secure user authentication via Clerk (social media authentication)
 - **Comprehensive Logging**: Application logs, error logs, and audit logs for security and compliance
 
 ## Architecture
 
-The application uses a microservices architecture with Docker containers:
+The application uses a simple three tier application. 
 
 Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document)
+
+### Conceptual Architecture
+
+![Conceptual View](./docs/img/aiq-Conceptual.jpg)
+
+docs/img
 
 ### Logical Architecture
 
