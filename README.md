@@ -29,7 +29,7 @@ A full-stack application for visualizing the annual net generation of U.S. power
 
 The application uses a microservices architecture with Docker containers:
 
-Find [Software Architecture Document](#./wiki/Power-Plan-Visualization-‐-Architecture-Document)
+Find [Software Architecture Document](../wiki/Power-Plan-Visualization-‐-Architecture-Document)
 
 ### Logical Architecture
 
