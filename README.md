@@ -139,9 +139,45 @@ Logical architecture depicts clear separation of concerns, supporting user inter
 
 ![DeploymentView](./docs/img/aiq-DeploymentView.jpg)
 
+Deployment Architecture depicts, Client (browser) accessing a Frontend via HTTPS. User authentication is handled through Google Social Media Authentication using OAuth2, resulting in a token for subsequent API calls. The Frontend communicates with a Backend via request/response. Both Frontend and Backend are deployed as Docker containers within a Container Orchestration environment. The Backend interacts with Minio Object Storage (also containerized) for data persistence. All Docker images (Frontend, Backend, Minio) are managed in a central Container Registry.
+
 ### Infrastructure Architecture
 
 ![InfraView](./docs/img/aiq-InfraView.jpg)
+
+Application can be hosted on any cloud provider. However, Azure is being used as AIQ uses Azure extensively.
+
+Here's a summary:
+
+**1. External Interactions:**
+* **End User:** Accesses the system.
+* **DDoS Protection:** Protects the entry point from Distributed Denial of Service attacks.
+* **Social Media Authentication (Google):** External service for user authentication.
+* **DevOps CI/CD (Github, Terraform):** External tools used for continuous integration, continuous deployment, and infrastructure as code.
+
+**2. Azure Infrastructure (Organized by Subnets):**
+
+* **Gateway Subnet:**
+    * **Application Gateway:** Acts as the entry point and reverse proxy for web traffic, distributing requests to the application.
+    * **WAF (Web Application Firewall):** Provides security against common web exploits.
+* **App Subnet:**
+    * **Frontend:** Hosts the user-facing application components.
+    * **Backend:** Hosts the core application logic and APIs.
+* **Storage Subnet:**
+    * **Object Storage:** Provides scalable storage for data (e.g., Minio from previous diagrams, or Azure Blob Storage).
+* **Shared Subnet:**
+    * **Container Registry:** Stores Docker images for deployment (e.g., Azure Container Registry).
+    * **Key Vault:** Securely stores and manages cryptographic keys, secrets, and other sensitive information.
+    * **APIM (API Management):** Manages APIs, likely for exposing backend services.
+* **Tenant Shared Subnet:** This subnet consolidates various shared Azure services crucial for operations, monitoring, and security across the tenant:
+    * **Monitor, App Insights, Security Center, Advisor, Service Health, Network Watcher:** Tools for monitoring application performance, health, security posture, and network diagnostics.
+    * **Cost Management & Billing, Log Analytics Workspace:** For cost optimization and centralized log collection/analysis.
+    * **Azure DevOps, Policy, Metrics, Defender:** Tools for DevOps practices, enforcing policies, collecting performance metrics, and threat protection.
+
+**Overall Security & Networking:**
+* Throughout the diagram, shield icons indicate **network security groups (NSGs)** or other security controls at the subnet level, enforcing network segmentation and access policies.
+* The `<->` arrows denote network peering or routing between subnets.
+* The cloud icon signifies the overall presence within the Azure cloud.
 
 
 ## Handling Changing Requirements
