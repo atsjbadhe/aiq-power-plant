@@ -26,7 +26,7 @@ A full-stack application for visualizing the annual net generation of U.S. power
 1. Clone the repository:
    ```bash
    git clone https://github.com/atsjbadhe/aiq-power-plant.git
-   cd aiq-padministrationower-plant
+   cd aiq-power-plant
    ```
 
 2. Build and run the containers:
