@@ -58,9 +58,6 @@ The application uses [Clerk](https://clerk.dev/) for authentication. Follow thes
    
    - Backend (.env file in the backend directory):
      ```
-     CLERK_PEM_PUBLIC_KEY=your_clerk_jwt_verification_key
-     # OR
-     CLERK_JWKS_URL=your_clerk_jwks_url
      FRONTEND_URL=http://localhost:5173
      ```
 
