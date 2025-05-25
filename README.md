@@ -203,44 +203,11 @@ Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-A
 
 ## Handling Changing Requirements
 
-The application is designed to be adaptable to changing requirements:
-
-### Scaling for Larger Datasets
-- **Distributed Processing**: Could implement Apache Spark for larger datasets
-- **Database Integration**: Could migrate from file-based storage to a database like PostgreSQL
-- **Caching**: Already implements in-memory caching, could add Redis for distributed caching
-
-### High Availability
-- **Load Balancing**: Could deploy with multiple backend instances behind a load balancer
-- **Clustering**: Could implement container orchestration with Kubernetes
-- **Database Replication**: Could implement master-slave replication for the database
-
-### Enhanced Security
-- **JWT Authentication**: Could add user authentication and authorization
-- **Role-Based Access Control**: Could implement different permission levels
-- **Data Encryption**: Could encrypt sensitive data at rest and in transit
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ## Monitoring
 
-The application could be monitored using the following strategies:
-
-### Application Monitoring
-- **Prometheus and Grafana**: For metrics collection and visualization
-- **Logging**: Centralized logging with ELK stack (Elasticsearch, Logstash, Kibana)
-  - **Application Logs**: General application logs in `logs/app.log`
-  - **Error Logs**: Detailed error tracking in `logs/error.log`
-  - **Audit Logs**: Security and compliance audit trail in `logs/audit.log`
-- **Tracing**: Distributed tracing with Jaeger or Zipkin
-
-### Infrastructure Monitoring
-- **Container Health**: Docker container health checks and resource utilization
-- **Host Metrics**: CPU, memory, disk, and network monitoring
-- **Alert Management**: Alerting with Alertmanager or PagerDuty
-
-### Business Metrics
-- **User Activity**: Monitor user interactions and feature usage
-- **Data Processing**: Track data processing times and volumes
-- **API Performance**: Monitor API response times and error rates
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ## Technology Choices
 
@@ -257,8 +224,11 @@ The application could be monitored using the following strategies:
 - **Boto3/MinIO**: For S3-compatible object storage interaction
 - **Pydantic**: For data validation and settings management
 
-### Infrastructure
+### Infrastructure (local)
 - **Docker**: For containerization and consistent environments
 - **Docker Compose**: For multi-container application orchestration
 - **MinIO**: For S3-compatible object storage
 - **Nginx**: For serving static files and API routing
+
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
+
