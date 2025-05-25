@@ -124,17 +124,28 @@ In essence, the system conceptually takes raw data, processes it through a defin
 This diagram provides a high-level architectural overview of a system, organized into several logical layers and domains. It outlines the major functional blocks and their responsibilities.
 
 **Main Application Layers:**
+
 **User Layer:** Represents the end-users interacting with the system.
+
 **User Interface Layer:** Provides the interaction points for users, including File Upload, Query capabilities, and Visualization of data.
+
 **API Management Layer:** Manages and secures API access, featuring an API Gateway, API Security mechanisms, and Traffic Manager for routing and control.
+
 **Business Core/API Layer:** Contains the core business logic and functionalities. This includes File Upload API, Top N Power Plants (suggesting domain-specific logic), Filter API, and data processing steps like Extract, Transform, and Store.
+
 **Persistent Layer:** Represents the data storage mechanism, depicted as a bucket icon (likely object storage or a database).
 
+
 **Cross-Cutting Concerns and Operational Domains:**
+
 **Control Layer:** Handles overarching management aspects such as AuthN & AuthZ (Authentication and Authorization), Identity Store, Governance, and Administration of the system.
+
 **DevOps:** Encompasses the practices and tools for development and operations, including Container Registry, CI/CD (Continuous Integration/Continuous Deployment), Containers (for deploying components), and Code Repo (source code repository).
+
 **Security:** Focuses on security concerns across different levels: Platform security, Application security, and Data security.
+
 **Ops and Monitoring:** Deals with the operational aspects and system health, including Analytics, Performance monitoring, Audit and Error Handling, and Configuration management.
+
 
 Logical architecture depicts clear separation of concerns, supporting user interaction, API management, core business logic, and persistent storage, while also highlighting crucial operational, security, and governance aspects.
 
