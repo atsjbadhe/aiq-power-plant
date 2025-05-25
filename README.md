@@ -41,8 +41,8 @@ A full-stack application for visualizing the annual net generation of U.S. power
    - MinIO Console: http://localhost:9001 (login with minioadmin/minioadmin)
 
 ## Usage
-1. **Login**
-   - Login (with rightside top option) using your Google credentials.
+1. **Sign-in**
+   - Sing-in (with rightside top option) using your Google credentials.
    - Once succesfull, you will be presented with main screen where you can upload and query data
      
 2. **Upload Data**:
@@ -54,8 +54,8 @@ A full-stack application for visualizing the annual net generation of U.S. power
    - Specify the number of top plants to view
    - Click "Visualize" to see the chart and data table
    - 
-4. **Logout**
-   - Logout from righthand top menu
+4. **Sign-out**
+   - Sign-out from righthand top menu
      
 ## Features
 
