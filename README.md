@@ -69,16 +69,22 @@ The application uses [Clerk](https://clerk.dev/) for authentication. Follow thes
    ```
 
 ## Usage
-
-1. **Upload Data**:
+1. **Login**
+   - Login (with rightside top option) using your Google credentials.
+   - Once succesfull, you will be presented with main screen where you can upload and query data
+     
+2. **Upload Data**:
    - Download the GEN23 sheet from the [EPA eGRID 2023 dataset](https://www.epa.gov/system/files/documents/2025-01/egrid2023_data_rev1.xlsx)
    - Save as CSV and upload using the application interface or via MinIO console
 
-2. **Visualize Data**:
+3. **Visualize Data**:
    - Select a state from the dropdown
    - Specify the number of top plants to view
    - Click "Visualize" to see the chart and data table
-
+   - 
+4. **Logout**
+   - Logout from righthand top menu
+     
 ## Features
 
 - **Data Ingestion**: Upload CSV files from EPA's eGRID dataset to S3-compatible storage
