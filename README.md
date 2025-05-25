@@ -89,9 +89,9 @@ The application uses [Clerk](https://clerk.dev/) for authentication. Follow thes
 
 ## Architecture
 
-The application uses a simple three tier application. 
+The solution operates within a typical web application context, leveraging cloud-native principles through containerization. It interfaces with external object storage for data input and provides a web-based interface for user interaction
 
-Find [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document)
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ### Conceptual Architecture
 
