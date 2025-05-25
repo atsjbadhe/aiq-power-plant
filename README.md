@@ -40,34 +40,6 @@ A full-stack application for visualizing the annual net generation of U.S. power
    - API swagger: http://localhost:8000/docs
    - MinIO Console: http://localhost:9001 (login with minioadmin/minioadmin)
 
-### Authentication Setup
-
-The application uses [Clerk](https://clerk.dev/) for authentication. Follow these steps to set up authentication:
-
-1. Create a Clerk account and a new application at https://dashboard.clerk.dev/
-2. Configure your Clerk application:
-   - Set up sign-in and sign-up methods
-   - Configure the JWT settings in the JWT Templates section
-   - Add your domain (e.g., localhost:5173 for development)
-
-3. Set the following environment variables:
-   - Frontend (.env file in the frontend directory):
-     ```
-     VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-     VITE_API_URL=http://localhost:8000
-     ```
-   
-   - Backend (.env file in the backend directory):
-     ```
-     FRONTEND_URL=http://localhost:5173
-     ```
-
-4. Restart the application:
-   ```bash
-   docker-compose down
-   docker-compose up -d
-   ```
-
 ## Usage
 1. **Login**
    - Login (with rightside top option) using your Google credentials.
