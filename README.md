@@ -37,6 +37,7 @@ A full-stack application for visualizing the annual net generation of U.S. power
 3. Access the application:
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:8000
+   - API swagger: http://localhost:8000/docs
    - MinIO Console: http://localhost:9001 (login with minioadmin/minioadmin)
 
 ### Authentication Setup
