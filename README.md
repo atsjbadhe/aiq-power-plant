@@ -34,40 +34,45 @@ A full-stack application for visualizing the annual net generation of U.S. power
    docker-compose up -d
    ```
 
-3. Access the application:
+3. Login to MinIO Console: http://localhost:9000 with minioadmin/minioadmin credentials and check if "power-viz" bucket present, if not, create bucket "power-viz"
+   
+4. Access the application:
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:8000
    - API swagger: http://localhost:8000/docs
-   - MinIO Console: http://localhost:9001 (login with minioadmin/minioadmin)
+   - MinIO Console: http://localhost:9000 (login with minioadmin/minioadmin and create "power-viz" bucket)
+
+Note : .env file already shipped with the code with Clerk keys. If you want to setup with your own follow steps 5 & 6 below,
   
-4. Authentication Setup
-  The application uses Clerk for authentication. Follow these steps to set up authentication:
+5. Authentication Setup 
+    The application uses Clerk for authentication. Follow these steps to set up authentication:
 
-  Create a Clerk account and a new application at https://dashboard.clerk.dev/
+    Create a Clerk account and a new application at https://dashboard.clerk.dev/
 
-  Configure your Clerk application:
+    Configure your Clerk application:
 
-    Set up sign-in and sign-up methods
-    Configure the JWT settings in the JWT Templates section
-    Add your domain (e.g., localhost:5173 for development)
+      Set up sign-in and sign-up methods
+      Configure the JWT settings in the JWT Templates section
+      Add your domain (e.g., localhost:5173 for development)
     
-  Set the following environment variables:
+    Set the following environment variables:
 
-  Frontend (.env file in the frontend directory):
+    Frontend (.env file in the frontend directory):
+  
+      VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+      VITE_API_URL=http://localhost:8000
+    Backend (.env file in the backend directory):
+  
+      CLERK_PEM_PUBLIC_KEY=your_clerk_jwt_verification_key
+      # OR
+      CLERK_JWKS_URL=your_clerk_jwks_url
+   
+      FRONTEND_URL=http://localhost:5173
 
-    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-    VITE_API_URL=http://localhost:8000
-  Backend (.env file in the backend directory):
+6. Restart the application:
 
-    CLERK_PEM_PUBLIC_KEY=your_clerk_jwt_verification_key
-    # OR
-    CLERK_JWKS_URL=your_clerk_jwks_url
-    FRONTEND_URL=http://localhost:5173
-
-5. Restart the application:
-
-docker-compose down
-docker-compose up -d
+    docker-compose down
+    docker-compose up -d
 
 
 ## Usage
