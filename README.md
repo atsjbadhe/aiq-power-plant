@@ -116,6 +116,8 @@ Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-A
 
 In essence, the system conceptually takes raw data, processes it through a defined pipeline, stores it, and then allows business users to query and visualize this processed data to gain insights. It highlights the logical separation of concerns within the data flow
 
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
+
 ### Logical Architecture
 
 ![Logical Architecture](./docs/img/aiq-HIghLevelView.jpg)
@@ -149,12 +151,15 @@ This diagram provides a high-level architectural overview of a system, organized
 
 Logical architecture depicts clear separation of concerns, supporting user interaction, API management, core business logic, and persistent storage, while also highlighting crucial operational, security, and governance aspects.
 
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ### Deployment Architecture
 
 ![DeploymentView](./docs/img/aiq-DeploymentView.jpg)
 
 Deployment Architecture depicts, Client (browser) accessing a Frontend via HTTPS. User authentication is handled through Google Social Media Authentication using OAuth2, resulting in a token for subsequent API calls. The Frontend communicates with a Backend via request/response. Both Frontend and Backend are deployed as Docker containers within a Container Orchestration environment. The Backend interacts with Minio Object Storage (also containerized) for data persistence. All Docker images (Frontend, Backend, Minio) are managed in a central Container Registry.
+
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ### Infrastructure Architecture
 
@@ -194,6 +199,7 @@ Here's a summary:
 * The `<->` arrows denote network peering or routing between subnets.
 * The cloud icon signifies the overall presence within the Azure cloud.
 
+Refer to  [Software Architecture Document](./wiki/Power-Plan-Visualization-‐-Architecture-Document) for more details.
 
 ## Handling Changing Requirements
 
